@@ -1,76 +1,61 @@
+.player {
+      max-width: 750px;
+      margin: 50px auto;
+      border: 5px solid #ccc;
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
 
-/* Your CSS Code here. */
-body {
-  background: #222;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+    .viewer {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.wrapper {
-  background: #000;
-  padding: 10px;
-  border-radius: 10px;
-  max-width: 800px;
-}
+    .player__controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px;
+    }
 
-.flex {
-  width: 100%;
-  border-radius: 8px;
-}
+    .progress {
+      flex: 10;
+      position: relative;
+      display: flex;
+      cursor: pointer;
+      background: #555;
+      height: 10px;
+      margin-right: 10px;
+    }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background: #333;
-  padding: 10px;
-  gap: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-}
+    .progress__filled {
+      width: 0%;
+      background: #f00;
+      flex-basis: 0;
+      flex-grow: 0;
+    }
 
-.player__button {
-  background: none;
-  border: 1px solid #777;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .player__button {
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-.player__button:hover {
-  background: #444;
-}
+    input[type="range"] {
+      width: 100px;
+    }
 
-.progress {
-  flex: 1;
-  height: 10px;
-  background: #555;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-}
-
-.progress__filled {
-  width: 0%;
-  background: #ff4b2b;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.speed {
-  margin-top: 10px;
-  text-align: center;
-}
-
-.speed-bar {
-  background: #ff4b2b;
-  border-radius: 5px;
-  width: 100px;
-  margin: auto;
-  padding: 5px;
-}
+    .skip {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
