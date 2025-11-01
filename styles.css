@@ -1,15 +1,18 @@
-/* --- General Layout --- */
+/* --- General Page Layout --- */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
   background: #111;
   font-family: "Poppins", sans-serif;
 }
 
+/* --- Video Player Container --- */
 .player {
   max-width: 750px;
+  width: 90%;
   border: 2px solid #333;
   border-radius: 10px;
   overflow: hidden;
@@ -17,24 +20,27 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Video --- */
+/* --- Video Styling --- */
 .player video {
   width: 100%;
   display: block;
+  cursor: pointer;
+  border-bottom: 2px solid #222;
 }
 
-/* --- Controls Section --- */
+/* --- Controls Container --- */
 .player__controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   background: #222;
   padding: 10px;
   color: #fff;
   gap: 10px;
 }
 
-/* --- Buttons --- */
+/* --- Play / Pause & Skip Buttons --- */
 .player__button,
 .skip {
   background: #333;
@@ -44,7 +50,7 @@ body {
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.1s;
 }
 
 .player__button:hover,
@@ -52,14 +58,23 @@ body {
   background: #555;
 }
 
-/* --- Sliders (Volume / Speed) --- */
+.player__button:active,
+.skip:active {
+  transform: scale(0.95);
+}
+
+/* --- Range Sliders (Volume & Playback Speed) --- */
 .player__slider {
   width: 120px;
-  accent-color: #ff4747; /* slider color */
+  accent-color: #ff4747; /* Custom slider color */
   cursor: pointer;
 }
 
-/* --- Progress Bar --- */
+.player__slider:hover {
+  opacity: 0.9;
+}
+
+/* --- Progress Bar Container --- */
 .progress {
   flex: 1;
   height: 10px;
@@ -71,20 +86,27 @@ body {
   position: relative;
 }
 
+/* --- Filled Portion of Progress Bar --- */
 .progress__filled {
-  width: 50%; /* example: 50% progress */
+  width: 0%; /* Starts empty */
   background: linear-gradient(90deg, #ff4747, #ff7e47);
   height: 100%;
-  transition: width 0.2s;
+  transition: width 0.2s ease;
 }
 
-/* --- Responsive Behavior --- */
+/* --- Responsive Layout for Smaller Screens --- */
 @media (max-width: 600px) {
   .player__controls {
     flex-direction: column;
     align-items: stretch;
   }
+
   .player__slider {
     width: 100%;
+  }
+
+  .progress {
+    width: 100%;
+    margin: 10px 0;
   }
 }
