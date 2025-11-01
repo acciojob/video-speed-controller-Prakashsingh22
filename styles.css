@@ -1,4 +1,3 @@
-/* --- General Page Layout --- */
 body {
   display: flex;
   justify-content: center;
@@ -9,11 +8,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* --- Player Container --- */
 .player {
   max-width: 750px;
   width: 90%;
-  border: 2px solid #333;
   border-radius: 10px;
   overflow: hidden;
   background: #000;
@@ -22,24 +19,20 @@ body {
   flex-direction: column;
 }
 
-/* --- Video --- */
 .player video {
   width: 100%;
   display: block;
-  border-bottom: 2px solid #222;
 }
 
-/* --- Controls Wrapper --- */
 .player__controls {
   display: flex;
-  flex-direction: column; /* stack: buttons row + progress bar */
+  flex-direction: column;
   background: #222;
   padding: 10px;
   color: #fff;
   gap: 10px;
 }
 
-/* --- Control Row (buttons + sliders) --- */
 .control-row {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +41,6 @@ body {
   gap: 10px;
 }
 
-/* --- Buttons --- */
 .player__button,
 .skip {
   background: #333;
@@ -71,14 +63,12 @@ body {
   transform: scale(0.95);
 }
 
-/* --- Sliders --- */
 .player__slider {
   width: 120px;
   accent-color: #ff4747;
   cursor: pointer;
 }
 
-/* --- Progress Bar --- */
 .progress {
   height: 10px;
   background: #444;
@@ -93,6 +83,15 @@ body {
   width: 0%;
   background: linear-gradient(90deg, #ff4747, #ff7e47);
   height: 100%;
-  transition: width 0.2s;
+  transition: width 0.1s;
 }
 
+@media (max-width: 600px) {
+  .control-row {
+    flex-direction: column;
+  }
+
+  .player__slider {
+    width: 100%;
+  }
+}
