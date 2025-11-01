@@ -96,12 +96,3 @@ body {
   transition: width 0.2s;
 }
 
-/* --- Responsive --- */
-@media (max-width: 600px) {
-  .control-row {
-    flex-direction: column;
-  }
-  .player__slider {
-    width: 100%;
-  }
-}
